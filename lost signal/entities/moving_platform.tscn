@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://csse72poc6ecn"]
+
+[ext_resource type="TileSet" uid="uid://dlj3wri365ifi" path="res://assets/tile_set.tres" id="1_v8uda"]
+
+[sub_resource type="Animation" id="Animation_hkflg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mil55"]
+resource_name = "platformMove"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TileMap:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 2, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 0), Vector2(250, 0), Vector2(250, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mdcbv"]
+_data = {
+"RESET": SubResource("Animation_hkflg"),
+"platformMove": SubResource("Animation_mil55")
+}
+
+[node name="movingPlatform" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_v8uda")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 0, 7, 0, 65536, 7, 1, 131072, 7)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "platformMove"
+libraries = {
+"": SubResource("AnimationLibrary_mdcbv")
+}

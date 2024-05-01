@@ -1,0 +1,274 @@
+[gd_scene load_steps=15 format=3 uid="uid://2625jeshwul8"]
+
+[ext_resource type="Script" path="res://menus/textbox/textbox script.gd" id="1_5w7px"]
+[ext_resource type="Texture2D" uid="uid://cixx3g3l64cie" path="res://assets/ui/text/textbox.png" id="2_4s83g"]
+[ext_resource type="Texture2D" uid="uid://cdgr5dtyeelcp" path="res://assets/ui/text/textbox bot.png" id="3_2m7pf"]
+[ext_resource type="FontFile" uid="uid://bba7ass6savfh" path="res://assets/ui/text/pixel art font.ttf" id="3_lcnim"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x80wj"]
+atlas = ExtResource("3_2m7pf")
+region = Rect2(0, 17, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3w0r"]
+atlas = ExtResource("3_2m7pf")
+region = Rect2(17, 17, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hiyjf"]
+atlas = ExtResource("3_2m7pf")
+region = Rect2(0, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l32y3"]
+atlas = ExtResource("3_2m7pf")
+region = Rect2(17, 0, 17, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mafg0"]
+atlas = ExtResource("3_2m7pf")
+region = Rect2(0, 34, 17, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2itx4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x80wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3w0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hiyjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l32y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mafg0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_bin6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textbox:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(576, 500)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textBot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(7, 0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("textBot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1035, 462.18)]
+}
+
+[sub_resource type="Animation" id="Animation_hadpl"]
+resource_name = "close"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textbox:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(46, 332), Vector2(576, 500)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textbox:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.01, 0.01)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textBot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(7, 7), Vector2(7, 0.01), Vector2(7, 0.01)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("textBot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1035, 422), Vector2(1035, 462.18), Vector2(1035, 462.18)]
+}
+
+[sub_resource type="Animation" id="Animation_1pfo0"]
+resource_name = "open"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("textbox:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("textbox:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(576, 500), Vector2(46, 332)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("textBot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(7, 0.01), Vector2(7, 0.01), Vector2(7, 7)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("textBot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1035, 462.18), Vector2(1035, 462.18), Vector2(1035, 422)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qbqbd"]
+_data = {
+"RESET": SubResource("Animation_bin6n"),
+"close": SubResource("Animation_hadpl"),
+"open": SubResource("Animation_1pfo0")
+}
+
+[node name="textbox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5w7px")
+
+[node name="textbox" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.04
+anchor_top = 0.636
+anchor_right = 0.96
+anchor_bottom = 0.929
+offset_left = 529.92
+offset_top = 87.872
+offset_right = 16427.7
+offset_bottom = 3015.97
+scale = Vector2(0.01, 0.01)
+
+[node name="Sprite2D" type="Sprite2D" parent="textbox"]
+position = Vector2(530, 135)
+scale = Vector2(10, 10)
+texture = ExtResource("2_4s83g")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.044
+anchor_top = 0.644
+anchor_right = 0.956
+anchor_bottom = 0.921
+offset_left = 25.312
+offset_top = 9.68802
+offset_right = -25.312
+offset_bottom = -8.80798
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_lcnim")
+theme_override_font_sizes/normal_font_size = 42
+scroll_active = false
+
+[node name="textBot" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.898
+anchor_top = 0.65
+anchor_right = 0.996
+anchor_bottom = 0.79
+offset_left = 0.504028
+offset_top = 40.98
+offset_right = 1597.04
+offset_bottom = 1324.06
+scale = Vector2(7, 0.01)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="textBot"]
+position = Vector2(8, 6.5)
+sprite_frames = SubResource("SpriteFrames_2itx4")
+
+[node name="textbox animator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qbqbd")
+}

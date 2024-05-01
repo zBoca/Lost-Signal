@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgkmtomrv21qd"]
+
+[ext_resource type="TileSet" uid="uid://dlj3wri365ifi" path="res://assets/tile_set.tres" id="1_ldwyg"]
+
+[node name="indicatorLight" type="Node2D"]
+
+[node name="green" type="TileMap" parent="."]
+visible = false
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_ldwyg")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131072, 327680, 9, -65536, 327680, 10)
+
+[node name="red" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = ExtResource("1_ldwyg")
+format = 2
+layer_0/tile_data = PackedInt32Array(-131072, 393216, 9, -65536, 393216, 10)

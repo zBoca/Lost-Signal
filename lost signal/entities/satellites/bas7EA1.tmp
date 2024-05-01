@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccky64eals6oi"]
+
+[ext_resource type="Texture2D" uid="uid://buafp5u0fi04x" path="res://entities/player/temp player.png" id="2_bevxf"]
+[ext_resource type="Script" path="res://entities/satellites/satelliteBeamEmission.gd" id="2_jtjgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxj4"]
+size = Vector2(28, 26)
+
+[node name="satellite" type="Area2D" groups=["satellite"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_4kxj4")
+
+[node name="base" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -15.5)
+scale = Vector2(0.9, 1.2)
+texture = ExtResource("2_bevxf")
+
+[node name="Node2D" type="Node2D" parent="CollisionShape2D"]
+position = Vector2(0, -46)
+scale = Vector2(1.33125, 0.375)
+
+[node name="satellite top" type="Sprite2D" parent="CollisionShape2D/Node2D"]
+texture = ExtResource("2_bevxf")
+script = ExtResource("2_jtjgk")

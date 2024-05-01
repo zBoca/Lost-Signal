@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccky64eals6oi"]
+
+[ext_resource type="Texture2D" uid="uid://b5ji3noiirsxu" path="res://entities/satellites/satellite base.png" id="1_bl2aa"]
+[ext_resource type="Script" path="res://entities/satellites/satelliteBeamEmission.gd" id="2_jtjgk"]
+[ext_resource type="Texture2D" uid="uid://bs4xlpwpxns7r" path="res://entities/satellites/satellite dish.png" id="2_tthlf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kxj4"]
+size = Vector2(28, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu88f"]
+size = Vector2(31.5493, 30.1251)
+
+[node name="satellite" type="Area2D" groups=["satellite"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_4kxj4")
+
+[node name="base" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(0, -15.5)
+scale = Vector2(1.96, 1.96)
+texture = ExtResource("1_bl2aa")
+
+[node name="Node2D" type="Node2D" parent="CollisionShape2D"]
+position = Vector2(0, -45)
+rotation = -1.5708
+scale = Vector2(1.36, 1.36)
+
+[node name="satellite top" type="Sprite2D" parent="CollisionShape2D/Node2D" groups=["satellite dish"]]
+rotation = 1.5708
+texture = ExtResource("2_tthlf")
+script = ExtResource("2_jtjgk")
+
+[node name="Area2D" type="Area2D" parent="CollisionShape2D/Node2D/satellite top" groups=["satellite dish"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D/Node2D/satellite top/Area2D" groups=["satellite dish"]]
+position = Vector2(5.68434e-14, -3.67648)
+scale = Vector2(0.99572, 0.439344)
+shape = SubResource("RectangleShape2D_wu88f")
+
+[node name="Timer" type="Timer" parent="CollisionShape2D/Node2D/satellite top"]
+process_callback = 0
+wait_time = 0.6
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="CollisionShape2D/Node2D/satellite top"]
+position = Vector2(5.96046e-08, -19.853)

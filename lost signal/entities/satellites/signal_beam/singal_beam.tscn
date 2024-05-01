@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1jf515fyso00"]
+
+[ext_resource type="Script" path="res://entities/satellites/signal_beam/singal_beam.gd" id="1_y5jqe"]
+[ext_resource type="Texture2D" uid="uid://cowbwevcj1lu3" path="res://entities/satellites/signal_beam/signal beam.png" id="2_3px53"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbayh"]
+size = Vector2(19.7646, 9.61216)
+
+[node name="signal beam" type="Node2D"]
+scale = Vector2(0.252978, -0.20807)
+script = ExtResource("1_y5jqe")
+
+[node name="TempPlayer" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_3px53")
+
+[node name="Area2D" type="Area2D" parent="." groups=["signal beam"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2.86465e-07)
+shape = SubResource("RectangleShape2D_wbayh")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

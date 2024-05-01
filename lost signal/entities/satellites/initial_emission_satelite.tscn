@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://biiku816g8ofq"]
+
+[ext_resource type="PackedScene" uid="uid://ccky64eals6oi" path="res://entities/satellites/base setellite.tscn" id="1_p23d7"]
+[ext_resource type="TileSet" uid="uid://dlj3wri365ifi" path="res://assets/tile_set.tres" id="2_671ow"]
+
+[node name="initial emission satelite" type="Node2D"]
+
+[node name="satellite" parent="." groups=["initialEmitter"] instance=ExtResource("1_p23d7")]
+position = Vector2(-15, -18)
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(2, 2)
+tile_set = ExtResource("2_671ow")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 0, 7, 0, 65536, 7, 1, 65536, 7, 2, 131072, 7, -65534, 131072, 6)
